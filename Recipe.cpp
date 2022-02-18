@@ -5,7 +5,7 @@ Recipe::Recipe(string name_t)
 {
     name_of_tool = name_t;
 }
-Recipe::Recipe(string name_t, double p_time, map<string, int> m_consuming) 
+Recipe::Recipe(string name_t, float p_time, map<string, int> m_consuming) 
 {
     name_of_tool = name_t;
     production_time = p_time;
@@ -15,14 +15,14 @@ void Recipe::add_material(string name_of_material, int consuming_amount)
 {
     materials_consuming.insert({name_of_material, consuming_amount});
 }
-void Recipe::add_production_time(double p_time) {
+void Recipe::add_production_time(float p_time) {
     production_time = p_time;
 }
 void Recipe::show_recipe() {
     print("Tools name: ");
     println(name_of_tool);
     print("Production time: ");
-    println(to_string(production_time));
+    print_round(production_time, 2);
     println("Materials: ");
     print_map_items(materials_consuming);
     println("");

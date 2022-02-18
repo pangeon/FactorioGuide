@@ -1,10 +1,30 @@
 #include <iostream>
 #include <map>
 #include "tools.hpp"
-#include "Recipe.hpp"
+#include "RecipesList.hpp"
 
 using namespace std;
 
+list<Recipe> init_recipes_data() 
+{
+    Recipe r_1("Iron plate", 3.2, {{"Iron ore", 1}});
+    Recipe r_2("Copper plate", 3.2, {{"Copper ore", 1}});
+    Recipe r_3("Iron gear wheel", 0.5, {{"Iron plate", 2}});
+    Recipe r_4("Stone furnace", 0.5, {{"Stone", 5}});
+    Recipe r_5("Burner mining drill", 2.0, 
+    {
+        {"Iron gear wheel", 3}, 
+        {"Copper plate", 3}
+    });
+    // !TODO: maybe function add_all in RecipesList
+    list<Recipe> recipes_list = {r_1, r_2, r_3, r_4, r_5};
+    return recipes_list;
+}
+void show_recipes() 
+{
+    RecipesList basic_list("Basic List", init_recipes_data());
+    basic_list.show_recipes_list();
+}
 void welcome_menu() 
 {
     print("\n>>> Welcome in Factorio Guide <<<\n\n");
@@ -20,13 +40,6 @@ void welcome_menu()
 int menu_choice(int user_choice) 
 {
     welcome_menu();
-
-    Recipe iron_plate("Iron Plate");
-    iron_plate.add_production_time(3.2);
-    iron_plate.add_material("Iron Ore", 1);
-
-    Recipe copper_plate("Copper plate", 3.2, {{"Copper Ore", 1}});
-
     switch (user_choice) 
     {
         case 0:
@@ -34,8 +47,7 @@ int menu_choice(int user_choice)
             return 0;
         case 1:
             println("Recipes list below:");
-            iron_plate.show_recipe();
-            copper_plate.show_recipe();
+            show_recipes();
             return 1;
         case 2:
             println("Display technology tree below:");
