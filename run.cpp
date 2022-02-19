@@ -7,17 +7,18 @@ using namespace std;
 
 list<Recipe> init_recipes_data() 
 {
-    Recipe r_1("Iron plate", 3.2, {{"Iron ore", 1}});
-    Recipe r_2("Copper plate", 3.2, {{"Copper ore", 1}});
-    Recipe r_3("Iron gear wheel", 0.5, {{"Iron plate", 2}});
-    Recipe r_4("Stone furnace", 0.5, {{"Stone", 5}});
-    Recipe r_5("Burner mining drill", 2.0, 
-    {
-        {"Iron gear wheel", 3}, 
-        {"Copper plate", 3}
-    });
-    // !TODO: maybe function add_all in RecipesList
-    list<Recipe> recipes_list = {r_1, r_2, r_3, r_4, r_5};
+    // !TODO: maybe function add_all in RecipesList, this seems too complicated 
+    list<Recipe> recipes_list = {
+        Recipe("Iron plate", 3.2, {{"Iron ore", 1}}),
+        Recipe("Copper plate", 3.2, {{"Copper ore", 1}}),
+        Recipe("Iron gear wheel", 0.5, {{"Iron plate", 2}}),
+        Recipe("Stone furnace", 0.5, {{"Stone", 5}}),
+        Recipe("Burner mining drill", 2.0,
+        {
+            {"Iron gear wheel", 3}, 
+            {"Copper plate", 3}
+        }) 
+    };
     return recipes_list;
 }
 void show_recipes() 
