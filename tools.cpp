@@ -13,13 +13,13 @@ void print(string text)
 {
     cout << text;
 }
-void print_map_items(map<string, int> collection) {
+void print_map_items(map<string, unsigned short int> collection) {
     for (auto& iter: collection) 
     {  
         cout << " -- " << iter.first << ": " << iter.second << '\n';  
     }  
 }
-void print_round(float number_to_print, int precision) 
+void print_round(float number_to_print, unsigned short int precision) 
 {
     cout << fixed;
     cout << setprecision(precision);
