@@ -1,7 +1,9 @@
 #include <iostream>
 #include <map>
+#include <vector>
 #include "tools.hpp"
 #include "RecipesList.hpp"
+#include "recipes_reader.hpp"
 
 using namespace std;
 
@@ -149,8 +151,30 @@ int menu_choice(int user_choice)
     }
     return -1;
 }
+
+// TEST
+
+void test()
+{
+    Recipe test_1(
+        get_item_name_from_file_line(), 
+        get_item_production_time_from_file_line(), 
+        get_item_production_resource_from_file_line()
+    );
+    test_1.show_recipe();
+
+    println("----------------------");
+    
+    vector<string> data;
+    data = get_records_from_file("txt/recipes_production.txt");
+    print_file_content(data);
+}
+
+// TEST
+
 int main() 
 {
+    //test();
     welcome_menu();
     while(user_choice != 0) 
     {
