@@ -1,2 +1,2 @@
-Stone furnace,0.5|Stone 5
-Burner mining drill,2.0|Iron gear wheel 3;Copper plate 3
+Stone furnace,0.5|[Stone 5]
+Burner mining drill,2.0|[Iron gear wheel 3;Copper plate 3]

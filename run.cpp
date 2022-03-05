@@ -153,30 +153,24 @@ int menu_choice(int user_choice)
 }
 
 // TEST
-
 void test()
 {
     vector<string> data = get_items_names_from_file_line();
     vector<float> f_data = get_item_production_time_from_file_line();
-    vector<string> m_data = get_item_production_resource_from_file_line(); // ! You must return map<string, unsigned short int>
-
-    for (int i = 0; i < data.size(); i++) {
-        println(data[i]);
-        print_round(f_data[i], 2);
-        println(m_data[i]);
-    }
+    vector<string> m_data = get_item_production_resource_from_file_line();
 
     RecipesList recipes_list("list");
-    for (int i = 0; i < 1; i++) {
-        recipes_list.add_recipe(Recipe(data[i], 0, map<string, unsigned short int>()));
+    for (int i = 0; i < 2; i++) {
+        recipes_list.add_recipe(Recipe(data[i], f_data[i], map<string, unsigned short int>()));
+        println(m_data[i]);
     }
-    recipes_list.show_recipes_list();
+    // recipes_list.show_recipes_list();
 }
 // TEST
 
 int main() 
 {
-    // test();
+    //test();
     welcome_menu();
     while(user_choice != 0) 
     {
