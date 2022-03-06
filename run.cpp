@@ -3,7 +3,6 @@
 #include <vector>
 #include "tools.hpp"
 #include "RecipesList.hpp"
-#include "recipes_reader.hpp"
 
 using namespace std;
 
@@ -151,26 +150,9 @@ int menu_choice(int user_choice)
     }
     return -1;
 }
-
-// TEST
-void test()
-{
-    vector<string> data = get_items_names_from_file_line();
-    vector<float> f_data = get_item_production_time_from_file_line();
-    vector<string> m_data = get_item_production_resource_from_file_line();
-
-    RecipesList recipes_list("list");
-    for (int i = 0; i < 2; i++) {
-        recipes_list.add_recipe(Recipe(data[i], f_data[i], map<string, unsigned short int>()));
-        println(m_data[i]);
-    }
-    // recipes_list.show_recipes_list();
-}
-// TEST
-
 int main() 
 {
-    //test();
+
     welcome_menu();
     while(user_choice != 0) 
     {

@@ -1,4 +1,3 @@
-
 #include "tools.hpp"
 
 using namespace std;
@@ -23,6 +22,26 @@ void print_round(float number_to_print, unsigned short int precision)
     cout << setprecision(precision);
     cout << number_to_print;
     cout << "\n";
+}
+vector<string> get_records_from_file(string file_path)
+{
+    fstream holder;
+    string file_line;
+    vector<string> records;
+
+    holder.open(file_path);
+    do 
+    {
+        getline(holder, file_line);
+        records.push_back(file_line);
+    } 
+    while(file_line != "");
+
+    sort(records.begin(), records.end());
+    records.erase(records.begin());    
+    
+    holder.close();
+    return records;
 }
 vector<string> split(vector<string> text, string separator) 
 {
@@ -49,6 +68,19 @@ vector<string> split(vector<string> text, string separator_1, string separator_2
             text[i]
             .substr(seperator_position_1+1, seperator_position_2-(seperator_position_1+1))
         );
+    }
+    return result;
+}
+/* Adapted from Stack Overflow: 
+https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c */
+vector<string> explode(const string &text, char separator) 
+{
+    vector<string> result;
+    stringstream string_stream (text);
+    string item;
+
+    while (getline (string_stream, item, separator)) {
+        result.push_back (item);
     }
     return result;
 }
