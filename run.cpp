@@ -2,118 +2,12 @@
 #include <map>
 #include <vector>
 #include "tools.hpp"
-#include "RecipesList.hpp"
+#include "recipes_read_data.hpp"
 
 using namespace std;
 
 short int user_choice = -1;
 
-// !TODO: maybe function add_all in RecipesList, this seems too complicated
-
-// PRODUCTION
-list<Recipe> init_production_items_data() 
-{
-    list<Recipe> recipes_list = 
-    {
-        Recipe("Stone furnace", 0.5, {{"Stone", 5}}),
-        Recipe("Burner mining drill", 2.0,
-        {
-            {"Iron gear wheel", 3}, 
-            {"Copper plate", 3}
-        }),
-        // Recipe("", 1, {{"", 1}})
-    };
-    return recipes_list;
-}
-
-// LOGISTICS
-list<Recipe> init_logistics_items_data() 
-{
-    list<Recipe> recipes_list = 
-    {
-        Recipe("Small electric pole", 0.5, 
-        {
-            {"Cooper cable", 2},
-            {"Wood", 1}
-        }),
-        Recipe("Wooden chest", 0.5, {{"Wood", 2}}),
-        Recipe("Iron chest", 0.5, {{"Iron plate", 6}}),
-        Recipe("Steal chest", 0.5, {{"Steal plate", 8}}),
-        Recipe("Storage tank", 3, 
-        {
-            {"Iron plate", 20},
-            {"Steal plate", 5}
-        })
-        // Recipe("", 1, {{"", 1}})
-    };
-    return recipes_list;
-}
-
-// INTERMEDIATE PRODUCTS
-list<Recipe> init_intermediate_products_data() 
-{
-    list<Recipe> recipes_list = 
-    {
-        Recipe("Iron plate", 3.2, {{"Iron ore", 1}}),
-        Recipe("Copper plate", 3.2, {{"Copper ore", 1}}),
-        Recipe("Iron gear wheel", 0.5, {{"Iron plate", 2}}),
-        Recipe("Cooper cable", 0.5, {{"Copper plate", 1}}),
-        Recipe("Electronic circuit", 0.5, 
-        {
-            {"Cooper cable", 3},
-            {"Iron plate", 1}
-        }), 
-        Recipe("Automation science pack", 5, {
-            {"Copper plate", 1},
-            {"Iron gear wheel", 1},
-        }),
-        Recipe("Iron stick", 0.5, {{"Iron plate", 1}}) 
-        // Recipe("", 1, {{"", 1}}) 
-    };
-    return recipes_list;
-}
-
-// COMBAT
-list<Recipe> init_combat_items_data() 
-{
-    list<Recipe> recipes_list = 
-    {
-        Recipe("Pistol", 5, 
-        {
-            {"Copper plate", 5},
-            {"Iron plate", 5},
-        }),
-        Recipe("Submachine gun", 10, 
-        {
-            {"Copper plate", 5},
-            {"Iron gear wheel", 10},
-            {"Iron plate", 10},
-        }),
-        // Recipe("", 1, {{"", 1}})
-    };
-    return recipes_list;
-}
-
-// !TODO: maybe show each group of items separately
-void show_all_recipes() 
-{
-    RecipesList production_items("Production items", init_production_items_data());
-    RecipesList logistics_items("Logitics items", init_logistics_items_data());
-    RecipesList intermediate_products("Intermediate products", init_intermediate_products_data());
-    RecipesList combat_items("Combat items", init_combat_items_data());
-    
-    println("-- PRODUCTION -- \n");
-    production_items.show_recipes_list();
-
-    println("-- LOGISTICS -- \n");
-    logistics_items.show_recipes_list();
-
-    println("-- INTERMEDIATE PRODUCTS -- \n");
-    intermediate_products.show_recipes_list();
-
-    println("-- COMBAT -- \n");
-    combat_items.show_recipes_list();
-}
 void welcome_menu() 
 {
     print("\n>>> Welcome in Factorio Guide <<<\n\n");
@@ -152,7 +46,6 @@ int menu_choice(int user_choice)
 }
 int main() 
 {
-
     welcome_menu();
     while(user_choice != 0) 
     {
