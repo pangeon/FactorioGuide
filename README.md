@@ -1,7 +1,6 @@
 # FactorioGuide
 A simple guide for Factorio.
 
-
 ## Instalation guide
 
 Visit on websiste -> [LINK](https://code.visualstudio.com/docs/cpp/config-mingw)
@@ -17,6 +16,10 @@ Visit on websiste -> [LINK](https://code.visualstudio.com/docs/cpp/config-mingw)
 ```
 ./run.exe
 ```
+
+## Information source:
+
+Visit on website -> [Factorio Wiki](https://wiki.factorio.com/)
 
 
 
