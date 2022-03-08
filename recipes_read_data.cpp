@@ -585,31 +585,204 @@ list<Recipe> init_intermediate_products_data()
     list<Recipe> recipes_list = 
     {
         // Fluids
-        // Recipe("", 1, 
-        // {
-        //     {"", 1},
-        //     {"", 1},
-        // }),
+        Recipe("Heavy oil (Advanced oil processing)", 5, 
+        {
+            {"Crude oil", 100},
+            {"Water", 50},
+        }),
+        Recipe("Heavy oil (Coal liquefaction)", 5, 
+        {
+            {"Coal", 10},
+            {"Heavy oil", 25},
+            {"Steam", 50},
+        }),
+        Recipe("Light oil (Advanced oil processing)", 5, 
+        {
+            {"Crude oil", 100},
+            {"Water", 50},
+        }),
+        Recipe("Light oil (Heavy oil cracking)", 2, 
+        {
+            {"Heavy oil", 40},
+            {"Water", 30},
+        }),
+        Recipe("Light oil (Coal liquefaction)", 5, 
+        {
+            {"Coal", 10},
+            {"Heavy oil", 25},
+            {"Steam", 50},
+        }),
+        Recipe("Lubricant", 1, {{"Heavy oil", 10}}),
+        Recipe("Petroleum gas (Basic oil processing)", 5, {{"Crude oil", 100}}),
+        Recipe("Petroleum gas (Advanced oil processing)", 5, 
+        {
+            {"Crude oil", 100},
+            {"Water", 50},
+        }),
+        Recipe("Petroleum gas (Light oil cracking)", 2, 
+        {
+            {"Light oil", 30},
+            {"Water", 30},
+        }),
+        Recipe("Petroleum gas (Coal liquefaction)", 2, 
+        {
+            {"Coal", 10},
+            {"Heavy oil", 25},
+            {"Steam", 50},
+        }),
+        Recipe("Sulfuric acid", 1, 
+        {
+            {"Iron plate", 1},
+            {"Sulfur", 5},
+            {"Water", 100},
+        }),
         
         // Materials
         Recipe("Iron plate", 3.2, {{"Iron ore", 1}}),
         Recipe("Copper plate", 3.2, {{"Copper ore", 1}}),
+        Recipe("Solid fuel (red recipe)", 2, {{"Heavy oil", 20}}),
+        Recipe("Solid fuel (yellow recipe)", 2, {{"Light oil", 10}}),
+        Recipe("Solid fuel (black recipe)", 2, {{"Petroleum gas", 20}}),
+        Recipe("Steel plate", 16, {{"Iron plate", 5}}),
+        Recipe("Plastic bar", 1, 
+        {
+            {"Coal", 1},
+            {"Petroleum gas", 20},
+        }),
+        Recipe("Sulfur", 1, 
+        {
+            {"Petroleum gas", 30},
+            {"Water", 30},
+        }),
+        Recipe("Battery", 4, 
+        {
+            {"Copper plate", 1},
+            {"Iron plate", 1},
+            {"Sulfuric acid", 20},
+        }),
+        Recipe("Explosives", 4, 
+        {
+            {"Coal", 1},
+            {"Sulfur", 1},
+            {"Water", 10},
+        }),
+        Recipe("Uranium-238", 12, {{"Uranium ore", 10}}),
+        Recipe("Uranium-238 (Nuclear fuel reprocessing)", 60, {{"Used up uranium fuel cell", 5}}),
+        Recipe("Uranium-238 (Kovarex enrichment process)", 60, 
+        {
+            {"Uranium-235", 40},
+            {"Uranium-238", 5},
+        }),
+        Recipe("Uranium-235", 12, {{"Uranium ore", 10}}),
+        Recipe("Uranium-235 (Kovarex enrichment process)", 60, 
+        {
+            {"Uranium-235", 40},
+            {"Uranium-238", 5},
+        }),
 
         // Crafting components
         Recipe("Cooper cable", 0.5, {{"Copper plate", 1}}),
-        Recipe("Iron gear wheel", 0.5, {{"Iron plate", 2}}),
         Recipe("Iron stick", 0.5, {{"Iron plate", 1}}),
+        Recipe("Iron gear wheel", 0.5, {{"Iron plate", 2}}),
         Recipe("Electronic circuit", 0.5, 
         {
             {"Cooper cable", 3},
             {"Iron plate", 1}
+        }),
+        Recipe("Advanced circuit", 6, 
+        {
+            {"Cooper cable", 4},
+            {"Electronic circuit", 2},
+            {"Plastic bar", 2},
         }), 
+        Recipe("Processing unit", 10, 
+        {
+            {"Advanced circuit", 2},
+            {"Electronic circuit", 20},
+            {"Sulfuric acid", 5},
+        }), 
+        Recipe("Engine unit", 10, 
+        {
+            {"Iron gear wheel", 1},
+            {"Pipe", 2},
+            {"Steel plate", 1},
+        }), 
+        Recipe("Electric engine unit", 10, 
+        {
+            {"Electronic circuit", 2},
+            {"Engine unit", 1},
+            {"Lubricant", 15},
+        }), 
+        Recipe("Flying robot frame", 20, 
+        {
+            {"Battery", 2},
+            {"Electric engine unit", 1},
+            {"Electronic circuit", 3},
+            {"Steel plate", 1},
+        }), 
+        Recipe("Rocket part", 3, 
+        {
+            {"Low density structure", 10},
+            {"Rocket control unit", 10},
+            {"Rocket fuel", 10},
+        }), 
+        Recipe("Rocket control unit", 30, 
+        {
+            {"Processing unit", 1},
+            {"Speed module", 1},
+        }), 
+        Recipe("Rocket fuel", 30, 
+        {
+            {"Light oil", 10},
+            {"Solid fuel", 10},
+        }), 
+        Recipe("Nuclear fuel", 90, 
+        {
+            {"Rocket fuel", 1},
+            {"Uranium-235", 1},
+        }),
+        Recipe("Uranium fuel cell", 10, 
+        {
+            {"Iron plate", 10},
+            {"Uranium-235", 1},
+            {"Uranium-238", 19},
+        }),
+        Recipe("Used up uranium fuel cell", 200, {{"Uranium fuel cell", 1}}), 
         
         // Science packs
         Recipe("Automation science pack", 5, {
             {"Copper plate", 1},
             {"Iron gear wheel", 1},
         }),
+        Recipe("Logistic science pack", 6, 
+        {
+            {"Inserter", 1},
+            {"Transport belt", 1},
+        }), 
+        Recipe("Military science pack", 10, 
+        {
+            {"Grenade", 1},
+            {"Piercing rounds magazine", 1},
+            {"Wall", 2},
+        }), 
+        Recipe("Chemical science pack", 24, 
+        {
+            {"Advanced circuit", 3},
+            {"Engine unit", 2},
+            {"Sulfur", 1},
+        }), 
+        Recipe("Production science pack", 21, 
+        {
+            {"Electric furnace", 1},
+            {"Productivity module", 1},
+            {"Rail", 30},
+        }), 
+        Recipe("Utility science pack", 21, 
+        {
+            {"Flying robot frame", 1},
+            {"Low density structure", 3},
+            {"Processing unit", 2},
+        }),  
     };
     return recipes_list;
 }
@@ -631,9 +804,113 @@ list<Recipe> init_combat_items_data()
             {"Iron gear wheel", 10},
             {"Iron plate", 10},
         }),
-
+        Recipe("Shotgun", 10, 
+        {
+            {"Copper plate", 10},
+            {"Iron gear wheel", 5},
+            {"Iron plate", 15},
+            {"Wood", 5},
+        }),
+        Recipe("Combat Shotgun", 10, 
+        {
+            {"Copper plate", 10},
+            {"Iron gear wheel", 5},
+            {"Steal plate", 15},
+            {"Wood", 10},
+        }),
+        Recipe("Rocket launcher", 10, 
+        {
+            {"Electronic circuit", 5},
+            {"Iron gear wheel", 5},
+            {"Iron plate", 5},
+        }),
+        Recipe("Flamethrower", 10, 
+        {
+            {"Iron gear wheel", 10},
+            {"Steel plate", 5},
+        }),
+        Recipe("Land mine", 5, 
+        {
+            {"Explosives", 2},
+            {"Steel plate", 1},
+        }),
+        
         // Ammo
+        Recipe("Firearm magazine", 1, {{"Iron plate", 4}}),
+        Recipe("Piercing rounds magazine", 3, 
+        {
+            {"Copper plate", 5},
+            {"Firearm magazine", 1},
+            {"Steel plate", 1},
+        }),
+        Recipe("Uranium rounds magazine", 10, 
+        {
+            {"Piercing rounds magazine", 1},
+            {"Uranium-238", 1},
+        }),
+        Recipe("Shotgun shells", 3, 
+        {
+            {"Copper plate", 1},
+            {"Iron plate", 1},
+        }),
+        Recipe("Piercing shotgun shells", 8, 
+        {
+            {"Copper plate", 5},
+            {"Shotgun shells", 2},
+            {"Steel plate", 2},
+        }),
+        Recipe("Cannon shell", 8, 
+        {
+            {"Explosives", 1},
+            {"Plastic bar", 2},
+            {"Steel plate", 2},
+        }),
+        Recipe("Explosive cannon shell", 8, 
+        {
+            {"Explosives", 2},
+            {"Plastic bar", 2},
+            {"Steel plate", 2},
+        }),  
+        Recipe("Uranium cannon shell", 12, 
+        {
+            {"Cannon shell", 1},
+            {"Uranium-238", 1},
+        }),
+        Recipe("Explosive uranium cannon shell", 12, 
+        {
+            {"Explosive cannon shell", 1},
+            {"Uranium-238", 1},
+        }),
+        Recipe("Rocket", 8, 
+        {
+            {"Electronic circuit", 1},
+            {"Explosives", 1},
+            {"Iron plate", 2},
+        }),
+        Recipe("Explosive rocket", 8, 
+        {
+            {"Explosives", 2},
+            {"Rocket", 1},
+        }),
+        Recipe("Atomic bomb", 50, 
+        {
+            {"Explosives", 10},
+            {"Rocket control unit", 10},
+            {"Uranium-235", 30},
+        }),
+        Recipe("Flamethrower ammo", 6, 
+        {
+            {"Crude oil", 100},
+            {"Steel plate", 5},
+        }),
+
         // Capsules
+        // Recipe("", 1, 
+        // {
+        //     {"", 1},
+        //     {"", 1},
+        // }),
+        
         // Armor
         // Equipment modules
         // Combat equipment
