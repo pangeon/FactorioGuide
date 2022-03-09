@@ -905,16 +905,197 @@ list<Recipe> init_combat_items_data()
         }),
 
         // Capsules
-        // Recipe("", 1, 
-        // {
-        //     {"", 1},
-        //     {"", 1},
-        // }),
+        Recipe("Grenade", 8, 
+        {
+            {"Coal", 10},
+            {"Iron plate", 5},
+        }),
+        Recipe("Cluster grenade", 8, 
+        {
+            {"Explosives", 5},
+            {"Grenade", 7},
+            {"Steel plate", 5},
+        }),
+        Recipe("Poison capsule", 8, 
+        {
+            {"Coal", 10},
+            {"Electronic circuit", 3},
+            {"Steel plate", 3},
+        }),
+        Recipe("Slowdown capsule", 8, 
+        {
+            {"Coal", 10},
+            {"Electronic circuit", 2},
+            {"Steel plate", 2},
+        }),
+        Recipe("Defender capsule", 8, 
+        {
+            {"Electronic circuit", 3},
+            {"Iron gear wheel", 3},
+            {"Piercing rounds magazine", 3},
+        }),
+        Recipe("Distractor capsule", 15, 
+        {
+            {"Advanced circuit", 3},
+            {"Defender capsule", 4},
+        }),
+        Recipe("", 15, 
+        {
+            {"Distractor capsule", 4},
+            {"Speed module", 1},
+        }),
         
         // Armor
+        Recipe("Light armor", 3, {{"Iron plate", 40}}),
+        Recipe("Heavy armor", 8, 
+        {
+            {"Copper plate", 100},
+            {"Steel plate", 50},
+        }),
+        Recipe("Modular armor", 15, 
+        {
+            {"Advanced circuit", 30},
+            {"Steel plate", 50},
+        }),
+        Recipe("Power armor", 20, 
+        {
+            {"Electric engine unit", 20},
+            {"Processing unit", 40},
+            {"Steel plate", 40},
+        }),
+        Recipe("Power armor MK2", 25, 
+        {
+            {"Efficiency module 2", 25},
+            {"Electric engine unit", 40},
+            {"Low density structure", 30},
+            {"Processing unit", 60},
+            {"Speed module 2", 25},
+        }),
+        
         // Equipment modules
+        Recipe("Portable solar panel", 10, 
+        {
+            {"Advanced circuit", 2},
+            {"Solar panel", 1},
+            {"Steel plate", 5},
+        }),
+        Recipe("Portable fusion reactor", 10, 
+        {
+            {"Low density structure", 50},
+            {"Processing unit", 200},
+        }),
+        Recipe("Personal battery", 10, 
+        {
+            {"Battery", 5},
+            {"Steel plate", 10},
+        }),
+        Recipe("Personal battery MK2", 10, 
+        {
+            {"Personal battery", 10},
+            {"Low density structure", 5},
+            {"Processing unit", 15},
+        }),
+        Recipe("Belt immunity equipment", 10, 
+        {
+            {"Advanced circuit", 5},
+            {"Steel plate", 10},
+        }),
+        Recipe("Exoskeleton", 10, 
+        {
+            {"Electric engine unit", 30},
+            {"Processing unit", 10},
+            {"Steel plate", 20},
+        }),
+        Recipe("Personal roboport", 10, 
+        {
+            {"Advanced circuit", 10},
+            {"Battery", 45},
+            {"Iron gear wheel", 40},
+            {"Steel plate", 20},
+        }),
+        Recipe("Personal roboport MK2", 20, 
+        {
+            {"Low density structure", 20},
+            {"Personal roboport", 5},
+            {"Processing unit", 100},
+        }),
+        Recipe("Nightvision", 10, 
+        {
+            {"Steel plate", 5},
+            {"Advanced circuit", 10},
+        }),
+        
         // Combat equipment
+        Recipe("Energy shield", 10, 
+        {
+            {"Advanced circuit", 5},
+            {"Steel plate", 10},
+        }),
+        Recipe("Energy shield MK2", 10, 
+        {
+            {"Energy shield", 10},
+            {"Low density structure", 5},
+            {"Processing unit", 5},
+        }),
+        Recipe("Personal laser defense", 10, 
+        {
+            {"Laser turret", 5},
+            {"Low density structure", 5},
+            {"Processing unit", 20},
+        }),
+        Recipe("Discharge defense", 10, 
+        {
+            {"Laser turret", 10},
+            {"Processing unit", 5},
+            {"Steel plate", 20},
+        }),
+        Recipe("Discharge defense remote", 0.5, {{"Electronic circuit", 1}}),
+        
         // Defense
+        Recipe("Wall", 0.5, {{"Stone brick", 5}}),
+        Recipe("Gate", 0.5, 
+        {
+            {"Electronic circuit", 2},
+            {"Steel plate", 2},
+            {"Wall", 1},
+        }),
+        Recipe("Gun turret", 8, 
+        {
+            {"Copper plate", 10},
+            {"Iron gear wheel", 10},
+            {"Iron plate", 20},
+        }),
+        Recipe("Laser turret", 20, 
+        {
+            {"Battery", 12},
+            {"Electronic circuit", 20},
+            {"Steel plate", 20},
+        }),
+        Recipe("Flamethrower turret", 20, 
+        {
+            {"Engine unit", 5},
+            {"Iron gear wheel", 15},
+            {"Pipe", 10},
+            {"Steel plate", 30},
+        }),
+        Recipe("", 40, 
+        {
+            {"Advanced circuit", 20},
+            {"Concrete", 60},
+            {"Iron gear wheel", 40},
+            {"Steel plate", 60},
+        }),
+        Recipe("Artillery targeting remote", 0.5, 
+        {
+            {"Processing unit", 1},
+            {"Radar", 1},
+        }),
+        Recipe("Radar", 0.5, 
+        {
+            {"Electronic circuit", 5},
+            {"Iron gear wheel", 5},
+            {"Iron plate", 10},
+        }),
     };
     return recipes_list;
 }
