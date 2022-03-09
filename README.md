@@ -8,7 +8,7 @@ Visit on websiste -> [LINK](https://code.visualstudio.com/docs/cpp/config-mingw)
 ## Compile programme:
 
 ```
- g++ run.cpp tools.cpp Recipe.cpp RecipesList.cpp recipes_read_data.cpp -o run.exe
+g++ run.cpp tools.cpp recipes/Recipe.cpp recipes/RecipesList.cpp recipes/recipes_read_data.cpp -o run.exe
 ```
 
 ## Run application:
