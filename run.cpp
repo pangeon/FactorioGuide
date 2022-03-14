@@ -29,8 +29,10 @@ int menu_choice(int user_choice)
             println("You leave application. Good Bay !");
             return 0;
         case 1:
+            int next_user_choice;
+            cin >> next_user_choice;
             println("Recipes list below:");
-            show_all_recipes();
+            show_production_items(next_user_choice);
             return 1;
         case 2:
             println("Display technology tree below:");

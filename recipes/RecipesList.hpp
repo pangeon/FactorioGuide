@@ -10,6 +10,7 @@ class RecipesList
     list<Recipe> recipes;
 
     public:
+        RecipesList();
         RecipesList(string list_name);
         RecipesList(string list_name, list<Recipe> recipes);
         

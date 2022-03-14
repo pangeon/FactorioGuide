@@ -2,6 +2,8 @@
 #include <iostream>
 #include "../tools.hpp"
 
+
+RecipesList::RecipesList() {}
 RecipesList::RecipesList(string l_name)
 {
     list_name = l_name;
