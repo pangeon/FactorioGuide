@@ -1,8 +1,10 @@
 # FactorioGuide
-A simple guide for Factorio.
+A simple guide for [Factorio](https://www.factorio.com/).
 
-## Instalation guide
+![Game logo](img/factorio-logo.png)
+![Game icons](img/hr-icons.png)
 
+## Prepare workspace in Visual Studio Code
 Visit on websiste -> [LINK](https://code.visualstudio.com/docs/cpp/config-mingw)
 
 ## Compile programme:
@@ -18,7 +20,6 @@ g++ run.cpp tools.cpp recipes/Recipe.cpp recipes/RecipesList.cpp recipes/recipes
 ```
 
 ## Information source:
-
 Visit on website -> [Factorio Wiki](https://wiki.factorio.com/)
 
 
