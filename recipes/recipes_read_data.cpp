@@ -80,12 +80,12 @@ namespace ProductionItemsLists
         };
     } 
     list<Recipe> get_space_related_specials()
-{
-    return list<Recipe> 
     {
-        rocket_silo, satellite
-    };
-} 
+        return list<Recipe> 
+        {
+            rocket_silo, satellite
+        };
+    } 
 }
 namespace LogisticItemsLists
 {
@@ -113,27 +113,158 @@ namespace LogisticItemsLists
             fast_inserter, filter_inserter, stack_inserter, stack_filter_inserter
         };
     }  
-    // list<Recipe> get_()
-    // {
-    //     return list<Recipe> 
-    //     {
-            
-    //     };
-    // }  
-}
+    list<Recipe> get_energy_and_water_distribution_items()
+    {
+        return list<Recipe> 
+        {
+            small_electric_pole, medium_electric_pole, big_electric_pole,
+            substation, pipe, pipe_to_ground, pump
+        };
+    }  
+    list<Recipe> get_railway_insfrastructure_builds()
+    {
+        return list<Recipe> 
+        {
+            rail, train_stop, rail_signal, rail_chain_signal,
+            locomotive, cargo_wagon, fluid_wagon, artillery_wagon
+        };
+    }  
+    list<Recipe> get_transport_vehicles_and_items()
+    {
+        return list<Recipe> 
+        {
+            car, tank, spidertron, spidertron_remote
+        };
+    }  
+    list<Recipe> get_logistic_network_items()
+    {
+        return list<Recipe> 
+        {
+            logistic_robot, construction_robot, active_provider_chest,
+            passive_provider_chest, storage_chest, buffer_chest, requester_chest,
+            roboport
+        };
+    }  
+    list<Recipe> get_circuit_network_items()
+    {
+        return list<Recipe> 
+        {
+            lamp, red_wire, green_wire, arithmetic_combinator, decider_combinator,
+            constant_combinator, power_switch, programmable_speaker
+        };
+    }  
+    list<Recipe> get_terrain_producuts()
+    {
+        return list<Recipe> 
+        {
+            stone_brick, hazard_concrete, refined_concrete,
+            refined_hazard_concrete, landfill, cliff_explosives
+        };
+    }
+}  
 namespace IntermediateProductsItemsLists
 {
-    // list<Recipe> get_()
-    // {
-    //     return list<Recipe> 
-    //     {
-            
-    //     };
-    // } 
+    list<Recipe> get_chemicals_and_gas()
+    {
+        return list<Recipe> 
+        {
+            heavy_oil_aop, heavy_oil_cl, light_oil_aop, light_oil_hoc,
+            light_oil_cl, lubricant, petroleum_gas_bop, petroleum_gas_aop,
+            petroleum_gas_loc, petroleum_gas_cl, sulfuric_acid
+        };
+    }
+    list<Recipe> get_materials()
+    {
+        return list<Recipe> 
+        {
+            iron_plate, copper_plate, solid_fuel_red, solid_fuel_yellow,
+            solid_fuel_black, steel_plate, plastic_bar, sulfur, battery,
+            explosives, uranium_238, uranium_238_nfp, uranium_238_kep,
+            uranium_235, uranium_235_kep 
+        };
+    } 
+    list<Recipe> get_crafting_components_items()
+    {
+        return list<Recipe> 
+        {
+            cooper_cable, iron_stick, iron_gear_wheel, electronic_circuit,
+            advanced_circuit, processing_unit, engine_unit, electric_engine_unit,
+            flying_robot_frame, rocket_part, rocket_control_unit, rocket_fuel,
+            nuclear_fuel, uranium_fuel_cell, used_up_uranium_fuel_cell
+        };
+    } 
+    list<Recipe> get_science_packs()
+    {
+        return list<Recipe> 
+        {
+            automation_science_pack, logistic_science_pack,
+            military_science_pack, chemical_science_pack, 
+            production_science_pack, utility_science_pack
+        };
+    } 
 }
+     
 namespace CombatItemsLists
 {
-
+    list<Recipe> get_weapons()
+    {
+        return list<Recipe> 
+        {
+            pistol, submachine_gun, shotgun, combat_shotgun, rocket_launcher,
+            flamethrower, land_mine
+        };
+    } 
+    list<Recipe> get_ammo_items()
+    {
+        return list<Recipe> 
+        {
+            firearm_magazine, piercing_rounds_magazine, shotgun_shells,
+            piercing_shotgun_shells, cannon_shell, explosive_cannon_shell,
+            uranium_cannon_shell, explosive_uranium_cannon_shell, rocket,
+            explosive_rocket, atomic_bomb, flamethrower_ammo
+        };
+    } 
+    list<Recipe> get_combat_capsules()
+    {
+        return list<Recipe> 
+        {
+            grenade, cluster_grenade, poison_capsule, slowdown_capsule,
+            defender_capsule, distractor_capsule, destroyer_capsule
+        };
+    } 
+    list<Recipe> get_combat_armors()
+    {
+        return list<Recipe> 
+        {
+            light_armor, heavy_armor, modular_armor, power_armor,
+            power_armor_mk2
+        };
+    } 
+    list<Recipe> get_used_equipment()
+    {
+        return list<Recipe> 
+        {
+            portable_solar_panel, portable_fusion_reactor,
+            personal_battery, personal_battery_mk2, belt_immunity_equipment,
+            exoskeleton, personal_roboport, personal_roboport_mk2, nightvision
+        };
+    } 
+    list<Recipe> get_defense_equipment()
+    {
+        return list<Recipe> 
+        {
+            energy_shield, energy_shield_mk2, personal_laser_defense,
+            discharge_defense, discharge_defense_remote
+        };
+    } 
+    list<Recipe> get_defense_builds()
+    {
+        return list<Recipe> 
+        {
+            wall, gate, gun_turret, laser_turret, flamethrower_turret,
+            artillery_turret, artillery_targeting_remote, radar
+        };
+    } 
 }
 
 
@@ -160,3 +291,6 @@ void show_production_items(int symbol)
     println("-- PRODUCTION ITEMS LIST -- \n");
     production_items_list.show_recipes_list();
 }
+void show_logistic_items(int symbol) {}
+void show_intermediate_products_items(int symbol) {}
+void show_combat_items(int symbol) {}
