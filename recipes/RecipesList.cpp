@@ -13,6 +13,10 @@ RecipesList::RecipesList(string l_name, list<Recipe> l_recipes)
     list_name = l_name;
     recipes = l_recipes;
 }
+string RecipesList::get_name() 
+{
+    return list_name;
+}
 void RecipesList::add_recipe(Recipe recipe) 
 {    
     RecipesList::recipes.push_back(recipe);

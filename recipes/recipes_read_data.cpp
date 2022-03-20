@@ -274,21 +274,63 @@ void show_production_items(int symbol)
     switch (symbol)
     {
         case 0:
+            break;
+        case 1:
+            production_items_list = 
+            RecipesList(
+                "Production tools items", 
+                ProductionItemsLists::get_tools()
+            );
+            break;
+        case 2:
             production_items_list = 
             RecipesList(
                 "Production electricity items", 
                 ProductionItemsLists::get_electricity_items()
             );
             break;
-        case 1:
+        case 3:
             production_items_list = 
             RecipesList(
                 "Production resource extraction items", 
                 ProductionItemsLists::get_resource_extraction_items()
             );
-            break;   
+            break;
+        case 4:
+            production_items_list = 
+            RecipesList(
+                "Production furnaces", 
+                ProductionItemsLists::get_furnaces()
+            );
+            break;
+        case 5:
+            production_items_list = 
+            RecipesList(
+                "Production works", 
+                ProductionItemsLists::get_production_works()
+            );
+            break;
+        case 6:
+            production_items_list = 
+            RecipesList(
+                "Production modules", 
+                ProductionItemsLists::get_modules()
+            );
+            break;
+        case 7:
+            production_items_list = 
+            RecipesList(
+                "Production space related specials", 
+                ProductionItemsLists::get_space_related_specials()
+            );
+            break;
+        default:
+            println("Program error");
+            break;
     }
-    println("-- PRODUCTION ITEMS LIST -- \n");
+    println("-------------------------------");
+    println(production_items_list.get_name());
+    println("-------------------------------");
     production_items_list.show_recipes_list();
 }
 void show_logistic_items(int symbol) {}
