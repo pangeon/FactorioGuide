@@ -202,8 +202,7 @@ namespace IntermediateProductsItemsLists
             production_science_pack, utility_science_pack
         };
     } 
-}
-     
+}  
 namespace CombatItemsLists
 {
     list<Recipe> get_weapons()
@@ -266,7 +265,6 @@ namespace CombatItemsLists
         };
     } 
 }
-
 
 void show_production_items(int symbol) 
 {
@@ -333,6 +331,191 @@ void show_production_items(int symbol)
     println("-------------------------------");
     production_items_list.show_recipes_list();
 }
-void show_logistic_items(int symbol) {}
-void show_intermediate_products_items(int symbol) {}
-void show_combat_items(int symbol) {}
+void show_logistic_items(int symbol) 
+{
+    RecipesList logistic_items_list;
+    switch (symbol)
+    {
+        case 0:
+            break;
+        case 1:
+            logistic_items_list = 
+            RecipesList(
+                "Logistic storage items", 
+                LogisticItemsLists::get_storage_items()
+            );
+            break;
+        case 2:
+            logistic_items_list = 
+            RecipesList(
+                "Logistic belt transport system items", 
+                LogisticItemsLists::get_belt_transport_system_items()
+            );
+            break;
+        case 3:
+            logistic_items_list = 
+            RecipesList(
+                "Logistic inserters", 
+                LogisticItemsLists::get_inserters()
+            );
+            break;
+        case 4:
+            logistic_items_list = 
+            RecipesList(
+                "Logistic energy and water distribution items", 
+                LogisticItemsLists::get_energy_and_water_distribution_items()
+            );
+            break;
+        case 5:
+            logistic_items_list = 
+            RecipesList(
+                "Logistic railway insfrastructure builds", 
+                LogisticItemsLists::get_railway_insfrastructure_builds()
+            );
+            break;
+        case 6:
+            logistic_items_list = 
+            RecipesList(
+                "Logistic transport vehicles and items", 
+                LogisticItemsLists::get_transport_vehicles_and_items()
+            );
+            break;
+        case 7:
+            logistic_items_list = 
+            RecipesList(
+                "Logistic network items", 
+                LogisticItemsLists::get_logistic_network_items()
+            );
+            break;
+        case 8:
+            logistic_items_list = 
+            RecipesList(
+                "Logistic circuit network", 
+                LogisticItemsLists::get_circuit_network_items()
+            );
+            break;
+        case 9:
+            logistic_items_list = 
+            RecipesList(
+                "Logistic terrain products", 
+                LogisticItemsLists::get_terrain_producuts()
+            );
+            break;
+        default:
+            println("Program error");
+            break;
+    }
+    println("-------------------------------");
+    println(logistic_items_list.get_name());
+    println("-------------------------------");
+    logistic_items_list.show_recipes_list();
+}
+void show_intermediate_products_items(int symbol) 
+{
+    RecipesList intermediate_products_list;
+    switch (symbol)
+    {
+        case 0:
+            break;
+        case 1:
+            intermediate_products_list = 
+            RecipesList(
+                "Intermediate products: chemicals and gas", 
+                IntermediateProductsItemsLists::get_chemicals_and_gas()
+            );
+            break;
+        case 2:
+            intermediate_products_list = 
+            RecipesList(
+                "Intermediate products: materials", 
+                IntermediateProductsItemsLists::get_materials()
+            );
+            break;
+        case 3:
+            intermediate_products_list = 
+            RecipesList(
+                "Intermediate products: crafting components items", 
+                IntermediateProductsItemsLists::get_crafting_components_items()
+            );
+            break;
+        case 4:
+            intermediate_products_list = 
+            RecipesList(
+                "Intermediate products: science packs", 
+                IntermediateProductsItemsLists::get_science_packs()
+            );
+            break;
+        default:
+            println("Program error");
+            break;
+    }
+    println("-------------------------------");
+    println(intermediate_products_list.get_name());
+    println("-------------------------------");
+    intermediate_products_list.show_recipes_list();
+}
+void show_combat_items(int symbol) 
+{
+    RecipesList combat_items_list;
+    switch (symbol)
+    {
+        case 0:
+            break;
+        case 1:
+            combat_items_list = 
+            RecipesList(
+                "Combat weapons", 
+                CombatItemsLists::get_weapons()
+            );
+            break;
+        case 2:
+            combat_items_list = 
+            RecipesList(
+                "Combat ammo items", 
+                CombatItemsLists::get_ammo_items()
+            );
+            break;
+        case 3:
+            combat_items_list = 
+            RecipesList(
+                "Combat capsules items", 
+                CombatItemsLists::get_combat_capsules()
+            );
+            break;
+        case 4:
+            combat_items_list = 
+            RecipesList(
+                "Combat armors", 
+                CombatItemsLists::get_combat_armors()
+            );
+            break;
+        case 5:
+            combat_items_list = 
+            RecipesList(
+                "Combat used equipment items", 
+                CombatItemsLists::get_used_equipment()
+            );
+            break;
+        case 6:
+            combat_items_list = 
+            RecipesList(
+                "Combat defense equipment items", 
+                CombatItemsLists::get_defense_equipment()
+            );
+            break;
+        case 7:
+            combat_items_list = 
+            RecipesList(
+                "Combat defense builds", 
+                CombatItemsLists::get_defense_builds()
+            );
+            break;
+        default:
+            println("Program error");
+            break;
+    }
+    println("-------------------------------");
+    println(combat_items_list.get_name());
+    println("-------------------------------");
+    combat_items_list.show_recipes_list();
+}
