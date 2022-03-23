@@ -154,18 +154,21 @@ int main()
                 cin >> user_third_choice;
                 show_production_items(user_third_choice);
             }
+
             while(user_next_choice == 2 and user_third_choice != 0)
             {
                 three_lvl_logistic_recipes_menu();
                 cin >> user_third_choice;
                 show_logistic_items(user_third_choice);
             }
+
             while(user_next_choice == 3 and user_third_choice != 0)
             {
                 three_lvl_intermediate_products_recipes_menu();
                 cin >> user_third_choice;
                 show_intermediate_products_items(user_third_choice);
             }
+            
             while(user_next_choice == 4 and user_third_choice != 0)
             {
                 three_lvl_combat_recipes_menu();
