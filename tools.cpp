@@ -102,4 +102,9 @@ void print_file_content(vector<string> file_data)
     {
         println(file_data[i]);
     }
+}
+string uppercase(string str) 
+{
+    for (auto & c: str) c = toupper(c);
+    return str;
 } 

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "Creature.hpp"
 
 using namespace std;
@@ -16,22 +17,20 @@ class Bitter
 
     public:
         Bitter(
-            Creature creature, 
+            Creature base_properties, 
             int_255 b_damage, 
             float a_speed, 
             float move_speed, 
             int_65535 poj_attack
         );
+        Bitter();
+        
+        void set_base_properties(Creature b_creature);
+        void set_damage(int_255 b_damage);
+        void set_attack_speed(float a_speed);
+        void set_speed(float move_speed);
+        void set_polllution_to_join_atack(int_65535 poj_attack);
 
-        int_255 get_damage();
-        void set_damage();
-
-        float get_attack_speed();
-        void set_attack_speed();
-
-        float get_speed();
-        void set_speed();
-
-        int_65535 get_polllution_to_join_atack();
-        void set_polllution_to_join_atack();
+        vector<string> info_about_bitter();
+        void print_info_about_bitter();
 };

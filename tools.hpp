@@ -19,4 +19,5 @@ vector<string> split(vector<string> text, string separator_1, string separator_2
 vector<string> explode(const string &text, char separator); 
 
 vector<float> vector_string_to_float(vector<string> string_vector);
-void print_file_content(vector<string> file_data); 
+void print_file_content(vector<string> file_data);
+string uppercase(string str);  

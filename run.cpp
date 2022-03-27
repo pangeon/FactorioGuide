@@ -3,12 +3,13 @@
 #include <vector>
 #include "tools.hpp"
 #include "recipes/recipes_read_data.hpp"
+#include "extras/ascii_image.hpp"
 
 using namespace std;
 
 void welcome_menu() 
 {
-    print("\n>>> Welcome in Factorio Guide <<<\n\n");
+    show_banner();
 
     print("---------------------------------\n");
     println("Select command:");
@@ -128,7 +129,7 @@ int submenu_choice(int user_next_choice)
 }
 int main() 
 {
-    short int user_choice = -1; 
+    short int user_choice{-1}; 
     
     // ---> CHOOSE MAIN OPTION
     welcome_menu();
@@ -136,7 +137,7 @@ int main()
     {
         cin >> user_choice;
         user_choice = menu_choice(user_choice);
-        short int user_next_choice = -1;
+        short int user_next_choice{-1};
 
         // ---> CHOOSE RECIPES LIST
         while(user_choice == 1 and user_next_choice != 0) 
@@ -145,7 +146,7 @@ int main()
             cin >> user_next_choice;
             user_next_choice = submenu_choice(user_next_choice);
 
-            short int user_third_choice = -1;
+            short int user_third_choice{-1};
 
             // ---> CHOOSE RECIPES TYPE PRODUCTION
             while(user_next_choice == 1 and user_third_choice != 0)
