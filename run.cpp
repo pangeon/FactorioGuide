@@ -3,7 +3,9 @@
 #include <vector>
 #include "tools.hpp"
 #include "recipes/recipes_read_data.hpp"
+#include "enemies/creatures_read_data.hpp"
 #include "extras/ascii_image.hpp"
+
 
 using namespace std;
 
@@ -19,7 +21,7 @@ void welcome_menu()
     println("3. Enemies");
     print("--------------------------------\n");
 }
-void submenu_recipes()
+void submenu_recipes_info()
 {
     println("Recipes -- select list:");
     print("---------------------------------\n");
@@ -28,6 +30,17 @@ void submenu_recipes()
     println("2. Logistics");
     println("3. Intermediate products");
     println("4. Combat");
+    print("--------------------------------\n");
+}
+void submenu_enemies_info()
+{
+    println("Enemies -- select list:");
+    print("---------------------------------\n");
+    println("0. Cancel");
+    println("1. Biters");
+    println("2. Splitters");
+    println("3. Worms");
+    println("4. Nests");
     print("--------------------------------\n");
     
 }
@@ -101,7 +114,7 @@ int menu_choice(int user_choice)
     }
     return -1;
 }
-int submenu_choice(int user_next_choice) 
+int submenu_recipes_choice(int user_next_choice) 
 {
     switch (user_next_choice)
     {
@@ -127,6 +140,33 @@ int submenu_choice(int user_next_choice)
     }
     return -1; 
 }
+int submenu_enemies_choice(int user_next_choice) 
+{
+    switch (user_next_choice)
+    {
+        case 0:
+            println("You leave enemies lists.");
+            welcome_menu();
+            return 0;
+        case 1:
+            println("Information about Biters");
+            show_biters();
+            return 1;
+        case 2:
+            println("Information about Splitters");
+            return 2;
+        case 3:
+            println("Information about Worms");
+            return 3;
+        case 4:
+            println("Information about Nests");
+            return 4;
+        default:
+            println("Program error");
+            break;
+    }
+    return -1; 
+}
 int main() 
 {
     short int user_choice{-1}; 
@@ -142,9 +182,9 @@ int main()
         // ---> CHOOSE RECIPES LIST
         while(user_choice == 1 and user_next_choice != 0) 
         {
-            submenu_recipes();
+            submenu_recipes_info();
             cin >> user_next_choice;
-            user_next_choice = submenu_choice(user_next_choice);
+            user_next_choice = submenu_recipes_choice(user_next_choice);
 
             short int user_third_choice{-1};
 
@@ -176,6 +216,21 @@ int main()
                 cin >> user_third_choice;
                 show_combat_items(user_third_choice);
             }
+        }
+
+        // ---> CHOOSE TECHNOLOGIES LIST
+        while(user_choice == 2 and user_next_choice != 0)
+        {
+            println("Sorry. Not implemented yet.");
+            break;
+        }
+
+        // ---> CHOOSE ENEMIES LIST
+        while(user_choice == 3 and user_next_choice != 0)
+        {
+            submenu_enemies_info();
+            cin >> user_next_choice;
+            user_next_choice = submenu_enemies_choice(user_next_choice);
         }
     }
     return 0;

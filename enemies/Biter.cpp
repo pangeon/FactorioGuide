@@ -1,8 +1,8 @@
-#include "Bitter.hpp"
+#include "Biter.hpp"
 #include "../tools.hpp"
 #include <cmath>
 
-Bitter::Bitter(Creature base_properties, int_255 b_damage, float a_speed, float move_speed, int_65535 poj_attack) 
+Biter::Biter(Creature base_properties, int_255 b_damage, float a_speed, float move_speed, int_65535 poj_attack) 
 {
     creature = base_properties;
     damage = b_damage;
@@ -10,14 +10,14 @@ Bitter::Bitter(Creature base_properties, int_255 b_damage, float a_speed, float 
     speed = move_speed;
     pollution_to_join_attack = poj_attack;
 }
-Bitter::Bitter() {};
-void Bitter::set_base_properties(Creature b_creature) { creature = b_creature; }
-void Bitter::set_damage(int_255 b_damage) { damage = b_damage; }
-void Bitter::set_attack_speed(float a_speed) { attack_speed = a_speed; }
-void Bitter::set_speed(float move_speed) { speed = move_speed; }
-void Bitter::set_polllution_to_join_atack(int_65535 poj_attack) { pollution_to_join_attack = poj_attack; }
+Biter::Biter() {};
+void Biter::set_base_properties(Creature b_creature) { creature = b_creature; }
+void Biter::set_damage(int_255 b_damage) { damage = b_damage; }
+void Biter::set_attack_speed(float a_speed) { attack_speed = a_speed; }
+void Biter::set_speed(float move_speed) { speed = move_speed; }
+void Biter::set_polllution_to_join_atack(int_65535 poj_attack) { pollution_to_join_attack = poj_attack; }
 
-vector<string> Bitter::info_about_bitter() 
+vector<string> Biter::info_about_biter() 
 {
     vector<string> all_about_bitter;
 
@@ -34,8 +34,8 @@ vector<string> Bitter::info_about_bitter()
 
     return all_about_bitter;
 }
-void Bitter::print_info_about_bitter() {
-    for(auto property : info_about_bitter()) 
+void Biter::print_info_about_biter() {
+    for(auto property : info_about_biter()) 
     {
         println(property);
     }

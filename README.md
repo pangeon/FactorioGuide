@@ -10,9 +10,8 @@ Visit on websiste -> [LINK](https://code.visualstudio.com/docs/cpp/config-mingw)
 ## Compile programme:
 
 ```
-g++ run.cpp tools.cpp recipes/Recipe.cpp recipes/RecipesList.cpp recipes/recipes_read_data.cpp extras/ascii_image.cpp -o run.exe
+g++ run.cpp tools.cpp recipes/Recipe.cpp recipes/RecipesList.cpp recipes/recipes_read_data.cpp enemies/Creature.cpp enemies/Biter.cpp enemies/creatures_data.cpp enemies/creatures_read_data.cpp extras/ascii_image.cpp -o run.exe
 
-g++ enemies/creatures_base.cpp enemies/Creature.cpp enemies/Bitter.cpp tools.cpp -o test.exe
 ```
 
 ## Run application:

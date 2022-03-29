@@ -7,7 +7,7 @@ using namespace std;
 using int_255 = unsigned char;
 using int_65535 = unsigned short int;
 
-class Bitter 
+class Biter 
 {
     Creature creature;
     int_255 damage;
@@ -16,14 +16,14 @@ class Bitter
     int_65535 pollution_to_join_attack;
 
     public:
-        Bitter(
+        Biter(
             Creature base_properties, 
             int_255 b_damage, 
             float a_speed, 
             float move_speed, 
             int_65535 poj_attack
         );
-        Bitter();
+        Biter();
         
         void set_base_properties(Creature b_creature);
         void set_damage(int_255 b_damage);
@@ -31,6 +31,6 @@ class Bitter
         void set_speed(float move_speed);
         void set_polllution_to_join_atack(int_65535 poj_attack);
 
-        vector<string> info_about_bitter();
-        void print_info_about_bitter();
+        vector<string> info_about_biter();
+        void print_info_about_biter();
 };
