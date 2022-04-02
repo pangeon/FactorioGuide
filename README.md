@@ -9,9 +9,20 @@ Visit on websiste -> [LINK](https://code.visualstudio.com/docs/cpp/config-mingw)
 
 ## Compile programme:
 
-```
-g++ run.cpp tools.cpp recipes/Recipe.cpp recipes/RecipesList.cpp recipes/recipes_read_data.cpp enemies/Creature.cpp enemies/Biter.cpp enemies/creatures_data.cpp enemies/creatures_read_data.cpp extras/ascii_image.cpp -o run.exe
+### Windows
+* cmd:
+    ```
+    start.bat
+    ```
+    
+* Powershell:
+    ```
+    ./start.bat
+    ```
 
+### Linux
+```
+./start.sh
 ```
 
 ## Run application:
