@@ -154,6 +154,7 @@ int submenu_enemies_choice(int user_next_choice)
             return 1;
         case 2:
             println("Information about Splitters");
+            show_splitters();
             return 2;
         case 3:
             println("Information about Worms");

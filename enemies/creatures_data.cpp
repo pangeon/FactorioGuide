@@ -64,3 +64,29 @@ Biter behemoth_biter() {
 
     return behemoth_biter;
 }
+Splitter small_splitter() 
+{
+    Creature small_splitter_properties;
+    small_splitter_properties.set_name("Small Spitter");
+    small_splitter_properties.set_desc("\n\tWeakest of spitters. Easy to kill with any weapon, but attacks at range.");
+    small_splitter_properties.set_health(10);
+    small_splitter_properties.set_range(13);
+
+    Splitter small_splitter;
+    small_splitter.set_base_properties(small_splitter_properties);
+    small_splitter.set_speed(40);
+
+    small_splitter.add_acid_projectile_info(
+        0.6, // Attack speed
+        1, // Area of effect size
+        12 // Damage (on contact):
+    );
+    small_splitter.add_acid_puddle_info(
+        32, // Lifetime
+        7.2, // Damage
+        // Applies effect (on contact):
+            60, // Movement/vehicle speed modifier
+            2 // Duration
+    );
+
+}
