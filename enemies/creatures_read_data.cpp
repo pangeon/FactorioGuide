@@ -8,4 +8,7 @@ void show_biters() {
 }
 void show_splitters() {
     small_splitter().print_info_about_splitter();
+    medium_splitter().print_info_about_splitter();
+    big_splitter().print_info_about_splitter();
+    behemoth_splitter().print_info_about_splitter();
 }

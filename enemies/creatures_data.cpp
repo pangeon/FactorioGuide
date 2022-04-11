@@ -1,5 +1,6 @@
 #include "creatures_data.hpp"
 
+// BITERS
 Biter small_biter() {
     Creature small_biter_properties;
     small_biter_properties.set_name("Small Biter");
@@ -64,6 +65,8 @@ Biter behemoth_biter() {
 
     return behemoth_biter;
 }
+
+// SPLITTERS
 Splitter small_splitter() 
 {
     Creature small_splitter_properties;
@@ -88,5 +91,83 @@ Splitter small_splitter()
             60, // Movement/vehicle speed modifier
             2 // Duration
     );
+    return small_splitter;
+}
+Splitter medium_splitter() 
+{
+    Creature medium_splitter_properties;
+    medium_splitter_properties.set_name("Medium Spitter");
+    medium_splitter_properties.set_desc("\n\tStronger and slower than the smaller version. Can pose a problem for and even kill weaker players.");
+    medium_splitter_properties.set_health(10*5);
+    medium_splitter_properties.set_range(13+1);
 
+    Splitter medium_splitter;
+    medium_splitter.set_base_properties(medium_splitter_properties);
+    medium_splitter.set_speed(35.6);
+
+    medium_splitter.add_acid_projectile_info(
+        0.6, // Attack speed
+        1.25, // Area of effect size
+        12*2 // Damage (on contact):
+    );
+    medium_splitter.add_acid_puddle_info(
+        32, // Lifetime
+        7.2*4, // Damage
+        // Applies effect (on contact):
+            50, // Movement/vehicle speed modifier
+            2 // Duration
+    );
+    return medium_splitter;
+}
+Splitter big_splitter() 
+{
+    Creature big_splitter_properties;
+    big_splitter_properties.set_name("Big Spitter");
+    big_splitter_properties.set_desc("\n\tAn even bulkier spitter and so can take more damage.");
+    big_splitter_properties.set_health(10*5*4);
+    big_splitter_properties.set_range(13+1+1);
+
+    Splitter big_splitter;
+    big_splitter.set_base_properties(big_splitter_properties);
+    big_splitter.set_speed(32.4);
+
+    big_splitter.add_acid_projectile_info(
+        0.6, // Attack speed
+        1.35, // Area of effect size
+        12*3 // Damage (on contact):
+    );
+    big_splitter.add_acid_puddle_info(
+        32, // Lifetime
+        130, // Damage
+        // Applies effect (on contact):
+            40, // Movement/vehicle speed modifier
+            2 // Duration
+    );
+    return big_splitter;
+}
+Splitter behemoth_splitter() 
+{
+    Creature behemoth_splitter_properties;
+    behemoth_splitter_properties.set_name("Behemoth Spitter");
+    behemoth_splitter_properties.set_desc("\n\tThe bulkiest of the spitters and so can take even more damage.");
+    behemoth_splitter_properties.set_health(10*5*4*7.5);
+    behemoth_splitter_properties.set_range(13+1+1+1);
+
+    Splitter behemoth_splitter;
+    behemoth_splitter.set_base_properties(behemoth_splitter_properties);
+    behemoth_splitter.set_speed(32.4);
+
+    behemoth_splitter.add_acid_projectile_info(
+        0.6, // Attack speed
+        1.75, // Area of effect size
+        12*5 // Damage (on contact):
+    );
+    behemoth_splitter.add_acid_puddle_info(
+        32, // Lifetime
+        360, // Damage
+        // Applies effect (on contact):
+            30, // Movement/vehicle speed modifier
+            2 // Duration
+    );
+    return behemoth_splitter;
 }

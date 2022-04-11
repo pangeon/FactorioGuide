@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Recipe.hpp"
 #include <list>
 

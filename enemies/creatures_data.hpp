@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Biter.hpp"
 #include "Splitter.hpp"
 
