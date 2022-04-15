@@ -276,22 +276,22 @@ namespace Logistics
             {"Iron gear wheel", 80},
             {"Lubricant", 40},
         });
-        Recipe splitter("Splitter", 1, 
+        Recipe spitter("spitter", 1, 
         {
             {"Electronic circuit", 5},
             {"Iron plate", 5},
             {"Transport belt", 4},
         });
-        Recipe fast_splitter("Fast splitter", 2, 
+        Recipe fast_spitter("Fast spitter", 2, 
         {
             {"Electronic circuit", 10},
             {"Iron gear wheel", 10},
-            {"Splitter", 1},
+            {"spitter", 1},
         });
-        Recipe express_splitter("Express splitter", 2, 
+        Recipe express_spitter("Express spitter", 2, 
         {
             {"Advanced circuit", 10},
-            {"Fast splitter", 1},
+            {"Fast spitter", 1},
             {"Iron gear wheel", 10},
             {"Lubricant", 80},
         });

@@ -20,4 +20,5 @@ vector<string> explode(const string &text, char separator);
 
 vector<float> vector_string_to_float(vector<string> string_vector);
 void print_file_content(vector<string> file_data);
-string uppercase(string str);  
+string uppercase(string str);
+string second_elem_in_map_pair_to_string(map<string, float> map_, string _elem); 

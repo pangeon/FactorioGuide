@@ -6,9 +6,15 @@ void show_biters() {
     big_biter().print_info_about_biter();
     behemoth_biter().print_info_about_biter();
 }
-void show_splitters() {
-    small_splitter().print_info_about_splitter();
-    medium_splitter().print_info_about_splitter();
-    big_splitter().print_info_about_splitter();
-    behemoth_splitter().print_info_about_splitter();
+void show_spitters() {
+    small_spitter().print_info_about_spitter_or_worm(true);
+    medium_spitter().print_info_about_spitter_or_worm(true);
+    big_spitter().print_info_about_spitter_or_worm(true);
+    behemoth_spitter().print_info_about_spitter_or_worm(true);
+}
+void show_worms() {
+    small_spitter().print_info_about_spitter_or_worm(false);
+    medium_spitter().print_info_about_spitter_or_worm(false);
+    big_spitter().print_info_about_spitter_or_worm(false);
+    behemoth_spitter().print_info_about_spitter_or_worm(false);
 }

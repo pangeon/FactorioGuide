@@ -38,9 +38,8 @@ void submenu_enemies_info()
     print("---------------------------------\n");
     println("0. Cancel");
     println("1. Biters");
-    println("2. Splitters");
+    println("2. Spitters");
     println("3. Worms");
-    println("4. Nests");
     print("--------------------------------\n");
     
 }
@@ -153,15 +152,13 @@ int submenu_enemies_choice(int user_next_choice)
             show_biters();
             return 1;
         case 2:
-            println("Information about Splitters");
-            show_splitters();
+            println("Information about Spitters");
+            show_spitters();
             return 2;
         case 3:
             println("Information about Worms");
+            show_worms();
             return 3;
-        case 4:
-            println("Information about Nests");
-            return 4;
         default:
             println("Program error");
             break;

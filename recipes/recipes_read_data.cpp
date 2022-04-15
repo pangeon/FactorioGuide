@@ -102,7 +102,7 @@ namespace LogisticItemsLists
         {
             transport_belt, fast_transport_belt, express_transport_belt,
             underground_belt, fast_underground_belt, express_underground_belt,
-            splitter, fast_splitter, express_splitter
+            spitter, fast_spitter, express_spitter
         };
     }  
     list<Recipe> get_inserters()

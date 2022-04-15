@@ -107,4 +107,8 @@ string uppercase(string str)
 {
     for (auto & c: str) c = toupper(c);
     return str;
-} 
+}
+string second_elem_in_map_pair_to_string(map<string, float> map_, string _elem)
+{
+    return to_string(map_.find(_elem) -> second);
+}   
