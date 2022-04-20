@@ -2,28 +2,44 @@
 
 using namespace std;
 
-void println(string text) 
+auto println(string text)-> void
 {
     cout << text << endl;
 }
-void print(string text) 
+auto print(string text) -> void
 {
     cout << text;
 }
-void print_map_items(map<string, unsigned short int> collection) {
+auto print_map_items(map<string, unsigned short int> collection) -> void
+{
     for (auto& iter: collection) 
     {  
         cout << " -- " << iter.first << ": " << iter.second << '\n';  
     }  
 }
-void print_round(float number_to_print, unsigned short int precision) 
+auto print_map_items(map<string, int> collection) -> void
+{
+    for (auto& iter: collection) 
+    {  
+        cout << " -- " << iter.first << ": " << iter.second << '\n';  
+    }  
+}
+auto print_vector_items(vector<string> collection, string label) -> void 
+{
+    cout << label << endl;
+    for(auto property : collection) 
+    {
+        cout << " -- " + property << endl;
+    }
+}
+auto print_round(float number_to_print, unsigned short int precision) -> void
 {
     cout << fixed;
     cout << setprecision(precision);
     cout << number_to_print;
     cout << "\n";
 }
-vector<string> get_records_from_file(string file_path)
+auto get_records_from_file(string file_path) -> vector<string>
 {
     fstream holder;
     string file_line;
@@ -43,7 +59,7 @@ vector<string> get_records_from_file(string file_path)
     holder.close();
     return records;
 }
-vector<string> split(vector<string> text, string separator) 
+auto split(vector<string> text, string separator) -> vector<string>
 {
     vector<string> result;
     int separator_position = 0;
@@ -54,7 +70,7 @@ vector<string> split(vector<string> text, string separator)
     }
     return result;
 }
-vector<string> split(vector<string> text, string separator_1, string separator_2) 
+auto split(vector<string> text, string separator_1, string separator_2) -> vector<string>
 {
     vector<string> result;
     int seperator_position_1 = 0;
@@ -73,7 +89,7 @@ vector<string> split(vector<string> text, string separator_1, string separator_2
 }
 /* Adapted from Stack Overflow: 
 https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c */
-vector<string> explode(const string &text, char separator) 
+auto explode(const string &text, char separator) -> vector<string>
 {
     vector<string> result;
     stringstream string_stream (text);
@@ -84,7 +100,7 @@ vector<string> explode(const string &text, char separator)
     }
     return result;
 }
-vector<float> vector_string_to_float(vector<string> string_vector) 
+auto vector_string_to_float(vector<string> string_vector) -> vector<float>
 {
     vector<float> float_vector;
     for(int i = 0; i < string_vector.size(); i++) 
@@ -96,19 +112,19 @@ vector<float> vector_string_to_float(vector<string> string_vector)
     }    
     return float_vector;
 }
-void print_file_content(vector<string> file_data)
+auto print_file_content(vector<string> file_data) -> void
 {
     for(int i = 0; i < file_data.size(); i++) 
     {
         println(file_data[i]);
     }
 }
-string uppercase(string str) 
+auto uppercase(string str) -> string
 {
     for (auto & c: str) c = toupper(c);
     return str;
 }
-string second_elem_in_map_pair_to_string(map<string, float> map_, string _elem)
+auto second_elem_in_map_pair_to_string(map<string, float> map_, string _elem) -> string
 {
     return to_string(map_.find(_elem) -> second);
 }   

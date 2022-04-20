@@ -4,12 +4,12 @@
 #include "tools.hpp"
 #include "recipes/recipes_read_data.hpp"
 #include "enemies/creatures_read_data.hpp"
+#include "technologies/Technology.hpp"
 #include "extras/ascii_image.hpp"
-
 
 using namespace std;
 
-void welcome_menu() 
+auto welcome_menu() -> void
 {
     show_banner();
 
@@ -21,7 +21,7 @@ void welcome_menu()
     println("3. Enemies");
     print("--------------------------------\n");
 }
-void submenu_recipes_info()
+auto submenu_recipes_info() -> void
 {
     println("Recipes -- select list:");
     print("---------------------------------\n");
@@ -32,7 +32,7 @@ void submenu_recipes_info()
     println("4. Combat");
     print("--------------------------------\n");
 }
-void submenu_enemies_info()
+auto submenu_enemies_info() -> void
 {
     println("Enemies -- select list:");
     print("---------------------------------\n");
@@ -41,9 +41,8 @@ void submenu_enemies_info()
     println("2. Spitters");
     println("3. Worms");
     print("--------------------------------\n");
-    
 }
-void three_lvl_production_recipes_menu()
+auto three_lvl_production_recipes_menu() -> void
 {
     println(":: Production ::\n");
     println("0. Cancel");
@@ -55,7 +54,7 @@ void three_lvl_production_recipes_menu()
     println("6. Modules");
     println("7. Space related");  
 }
-void three_lvl_logistic_recipes_menu()
+auto three_lvl_logistic_recipes_menu() -> void
 {
     println(":: Logistics ::\n");
     println("0. Cancel");
@@ -69,7 +68,7 @@ void three_lvl_logistic_recipes_menu()
     println("8. Circuit network");
     println("9. Terrain");
 }
-void three_lvl_intermediate_products_recipes_menu()
+auto three_lvl_intermediate_products_recipes_menu() -> void
 {
     println(":: Intermediate Products ::\n");
     println("0. Cancel");
@@ -78,7 +77,7 @@ void three_lvl_intermediate_products_recipes_menu()
     println("3. Crafting components");
     println("4. Science packs");
 } 
-void three_lvl_combat_recipes_menu()
+auto three_lvl_combat_recipes_menu() -> void
 {
     println(":: Combat ::\n");
     println("0. Cancel");
@@ -90,7 +89,7 @@ void three_lvl_combat_recipes_menu()
     println("6. Combat equipment");
     println("7. Defense");
 } 
-int menu_choice(int user_choice) 
+auto menu_choice(int user_choice) -> int
 {
     welcome_menu();
     switch (user_choice) 
@@ -113,7 +112,7 @@ int menu_choice(int user_choice)
     }
     return -1;
 }
-int submenu_recipes_choice(int user_next_choice) 
+auto submenu_recipes_choice(int user_next_choice) -> int
 {
     switch (user_next_choice)
     {
@@ -139,7 +138,7 @@ int submenu_recipes_choice(int user_next_choice)
     }
     return -1; 
 }
-int submenu_enemies_choice(int user_next_choice) 
+auto submenu_enemies_choice(int user_next_choice) -> int 
 {
     switch (user_next_choice)
     {
@@ -165,8 +164,22 @@ int submenu_enemies_choice(int user_next_choice)
     }
     return -1; 
 }
-int main() 
+auto main() -> int
 {
+    // TEST
+    Technology automation_research_lvl_1
+    (
+        "Automation", 
+        {"None"}, 
+        {"Electronics"}, 
+        {"Assembling machine 1", "Long-handed inserter"}
+    );
+    automation_research_lvl_1.add_technology_cost({"Time", 10});
+    automation_research_lvl_1.add_technology_cost({"Automation science pack", 1});
+    automation_research_lvl_1.add_technology_cost({"Multiplier", 10});
+
+    automation_research_lvl_1.print_info_about_technlogies();
+    
     short int user_choice{-1}; 
     
     // ---> CHOOSE MAIN OPTION
@@ -231,5 +244,7 @@ int main()
             user_next_choice = submenu_enemies_choice(user_next_choice);
         }
     }
+    
+    
     return 0;
 }
