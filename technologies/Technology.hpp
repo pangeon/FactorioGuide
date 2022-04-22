@@ -22,5 +22,6 @@ class Technology {
             vector<string> t_unlocked_recipes
         );
         void add_technology_cost(pair<string, int> cost_parameter);
-        void print_info_about_technlogies(); 
+        void add_all_technology_costs(map<string, int> cost_parameters);
+        void print_info_about_technlogy(); 
 };

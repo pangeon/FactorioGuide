@@ -18,7 +18,14 @@ void Technology::add_technology_cost(pair<string, int> cost_parameter)
 {
     cost.insert(cost_parameter);
 }
-void Technology::print_info_about_technlogies() 
+void Technology::add_all_technology_costs(map<string, int> cost_parameters)
+{
+    for (pair<string, int> o : cost_parameters) 
+    {
+        add_technology_cost(o);
+    }
+} 
+void Technology::print_info_about_technlogy() 
 {
     println(uppercase(">> " + name));
     print_map_items(cost);

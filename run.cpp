@@ -4,7 +4,7 @@
 #include "tools.hpp"
 #include "recipes/recipes_read_data.hpp"
 #include "enemies/creatures_read_data.hpp"
-#include "technologies/Technology.hpp"
+#include "technologies/technologies_data.hpp"
 #include "extras/ascii_image.hpp"
 
 using namespace std;
@@ -30,6 +30,23 @@ auto submenu_recipes_info() -> void
     println("2. Logistics");
     println("3. Intermediate products");
     println("4. Combat");
+    print("--------------------------------\n");
+}
+auto submenu_technologies_info() -> void
+{
+    println("Technologies -- select list:");
+    print("---------------------------------\n");
+    println("0. Cancel");
+    println("1. Machines");
+    println("2. Military/Weaponry");
+    println("3. Bonuses");
+    println("4. Player augmentation");
+    println("5. Defense");
+    println("6. Crafting");
+    println("7. Transportation");
+    println("8. Equipment modules");
+    println("9. Modules");
+    println("10. Navigation");
     print("--------------------------------\n");
 }
 auto submenu_enemies_info() -> void
@@ -138,6 +155,42 @@ auto submenu_recipes_choice(int user_next_choice) -> int
     }
     return -1; 
 }
+auto submenu_technologies_choice(int user_next_choice) -> int
+{
+    switch (user_next_choice)
+    {
+        case 0:
+            println("You leave technologies lists.");
+            welcome_menu();
+            return 0;
+        case 1:
+            println("Enter machines research");
+            Machines::get_technologies().print_technology_list();
+            return 1;
+        case 2:
+            return 2;
+        case 3:
+            return 3;
+        case 4:
+            return 4;
+        case 5:
+            return 5;
+        case 6:
+            return 6;
+        case 7:
+            return 7;
+        case 8:
+            return 8;
+        case 9:
+            return 9;
+        case 10:
+            return 10;
+        default:
+            println("Program error");
+            break;
+    }
+    return -1; 
+}
 auto submenu_enemies_choice(int user_next_choice) -> int 
 {
     switch (user_next_choice)
@@ -166,20 +219,6 @@ auto submenu_enemies_choice(int user_next_choice) -> int
 }
 auto main() -> int
 {
-    // TEST
-    Technology automation_research_lvl_1
-    (
-        "Automation", 
-        {"None"}, 
-        {"Electronics"}, 
-        {"Assembling machine 1", "Long-handed inserter"}
-    );
-    automation_research_lvl_1.add_technology_cost({"Time", 10});
-    automation_research_lvl_1.add_technology_cost({"Automation science pack", 1});
-    automation_research_lvl_1.add_technology_cost({"Multiplier", 10});
-
-    automation_research_lvl_1.print_info_about_technlogies();
-    
     short int user_choice{-1}; 
     
     // ---> CHOOSE MAIN OPTION
@@ -232,8 +271,9 @@ auto main() -> int
         // ---> CHOOSE TECHNOLOGIES LIST
         while(user_choice == 2 and user_next_choice != 0)
         {
-            println("Sorry. Not implemented yet.");
-            break;
+            submenu_technologies_info();
+            cin >> user_next_choice;
+            user_next_choice = submenu_technologies_choice(user_next_choice);
         }
 
         // ---> CHOOSE ENEMIES LIST
@@ -244,7 +284,5 @@ auto main() -> int
             user_next_choice = submenu_enemies_choice(user_next_choice);
         }
     }
-    
-    
     return 0;
 }
